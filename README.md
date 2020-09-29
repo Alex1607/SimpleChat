@@ -8,6 +8,11 @@ The plugin only has one command, that I will show in a bit. The main functions o
 - Local chat: The player will be able to send local messages to players that are up to 25 blocks far from you (this value can be changed in the plugin folder file named config.yml).
 - Global chat: The player will be able to use the command /g (message) to send messages to all online players.
 
+## Important
+To use this plugin, you need to install the Vault plugin as well. It is needed, if you don't install Vault, the plugin won't work.
+
+Link to Vault: https://www.spigotmc.org/resources/vault.34315/
+
 ## Commands
 There is only one command so far:
 
@@ -18,6 +23,13 @@ There is only one command so far:
 - simplechat.local.use - allow the player or group to use the local chat
 - simplechat.global.use - allow the player or group to use the global chat
 
+## Group prefix
+
+To show a group prefix, you will need a permissions plugin that allows you to create groups and add a prefix to it.
+
+The plugin was tested using LuckPerms (https://www.spigotmc.org/resources/luckperms.28140/), but you can use any other permissions plugin, as long as the permissions plugin
+can interact with Vault.
+
 ## Local Chat
 When you send a message in the local chat, it will be shown like this:
 Example with and without a group prefix.
@@ -26,6 +38,11 @@ Example with and without a group prefix.
 
 ### In case that there is no one in the local chat block radius:
 ![Imagem](https://i.imgur.com/ywGeAHB.png)
+
+### If you want to change the block radius:
+Go to the folder SimpleChat that will be generated in your plugins folder when you run the plugin for the first time, and open the config.yml file with any text editor.
+Once you are inside the config.yml folder, just change the value to the one you want (the default value is 25)
+![Imagem](https://i.imgur.com/oTRQR6U.png)
 
 ## Global Chat
 When you send a message in the global chat (using the command: /g), it will be sent like this:
