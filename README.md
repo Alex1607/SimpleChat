@@ -10,6 +10,7 @@ The plugin only has one command, that I will show in a bit. The main functions o
 
 ## Local Chat
 When you send a message in the local chat, it will be shown like this:
+
 Example with and without a group prefix.
 
 ![Imagem 1](https://i.imgur.com/XJOo5Fd.png)
@@ -19,6 +20,7 @@ Example with and without a group prefix.
 
 ## Global Chat
 When you send a message in the global chat (using the command: /g), it will be sent like this:
+
 Example with and without a group prefix.
 
 ![Imagem 2](https://i.imgur.com/n3wzJKn.png)
