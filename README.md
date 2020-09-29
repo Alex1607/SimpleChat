@@ -8,9 +8,18 @@ The plugin only has one command, that I will show in a bit. The main functions o
 - Local chat: The player will be able to send local messages to players that are up to 25 blocks far from you (this value can be changed in the plugin folder file named config.yml).
 - Global chat: The player will be able to use the command /g (message) to send messages to all online players.
 
+## Commands
+There is only one command so far:
+
+- /g (message)
+
+## Permissions
+
+- simplechat.local.use - allow the player or group to use the local chat
+- simplechat.global.use - allow the player or group to use the global chat
+
 ## Local Chat
 When you send a message in the local chat, it will be shown like this:
-
 Example with and without a group prefix.
 
 ![Imagem 1](https://i.imgur.com/XJOo5Fd.png)
@@ -20,7 +29,6 @@ Example with and without a group prefix.
 
 ## Global Chat
 When you send a message in the global chat (using the command: /g), it will be sent like this:
-
 Example with and without a group prefix.
 
 ![Imagem 2](https://i.imgur.com/n3wzJKn.png)
