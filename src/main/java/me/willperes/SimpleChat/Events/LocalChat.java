@@ -56,6 +56,12 @@ public class LocalChat implements Listener {
          */
         World world = whoSent.getWorld();
         ArrayList<Player> players = new ArrayList<>(Bukkit.getServer().getOnlinePlayers());
+        if(players.size() == 1) {
+            whoSent.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[L] "
+                    + playerGroupPrefix + "&f" + whoSent.getDisplayName() + "&e: " + message));
+            whoSent.sendMessage(ChatColor.YELLOW + "There is no one close to hear you...");
+            return;
+        }
         for(i = 0 ; i < players.size() ; i++) {
             if(players.get(i).getLocation().distanceSquared(loc) < Math.pow(radius,2)) {
 
@@ -72,14 +78,10 @@ public class LocalChat implements Listener {
                 // There is no one in the player radius.
             }else{
 
-                if(players.get(i).equals(whoSent)) {
-                    // player equal player
-                }else {
-                    whoSent.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[L] "
-                            + playerGroupPrefix + "&f" + whoSent.getDisplayName() + "&e: " + message));
-                    whoSent.sendMessage(ChatColor.YELLOW + "There is no one close to hear you...");
-                    return;
-                }
+                whoSent.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[L] "
+                        + playerGroupPrefix + "&f" + whoSent.getDisplayName() + "&e: " + message));
+                whoSent.sendMessage(ChatColor.YELLOW + "There is no one close to hear you...");
+                return;
 
             }
         }
