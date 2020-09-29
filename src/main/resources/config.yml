@@ -1,0 +1,4 @@
+# SimpleChat config file
+
+# Insert the number of blocks of the local chat radius, the number must be a natural number {1,2,3,4,5,...}
+RadiusNumber: 25
