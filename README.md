@@ -23,6 +23,13 @@ There is only one command so far:
 - simplechat.local.use - allow the player or group to use the local chat
 - simplechat.global.use - allow the player or group to use the global chat
 
+## Group prefix
+
+To show a group prefix, you will need a permissions plugin that allows you to create groups and add a prefix to it.
+
+The plugin was tested using LuckPerms (https://www.spigotmc.org/resources/luckperms.28140/), but you can use any other permissions plugin, as long as the permissions plugin
+can interact with Vault.
+
 ## Local Chat
 When you send a message in the local chat, it will be shown like this:
 Example with and without a group prefix.
