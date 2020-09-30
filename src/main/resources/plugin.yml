@@ -1,9 +1,11 @@
 main: me.willperes.SimpleChat.Main.SimpleChatMain
 name: SimpleChat
-version: 1.2
+version: 1.3
 author: willperes
 softdepend: [Vault]
 
 commands:
   g:
     description: Send a global message.
+  simplechat:
+    description: Shows all available commands.

@@ -1,5 +1,6 @@
 package me.willperes.SimpleChat.Main;
 
+import me.willperes.SimpleChat.Commands.Basic;
 import net.milkbowl.vault.chat.Chat;
 
 import me.willperes.SimpleChat.Commands.GlobalChat;
@@ -25,6 +26,7 @@ public final class SimpleChatMain extends JavaPlugin implements Listener {
         plugin = this;
 
         this.getCommand("g").setExecutor(new GlobalChat());
+        this.getCommand("simplechat").setExecutor(new Basic());
         this.getServer().getPluginManager().registerEvents(new LocalChat(), this);
 
         setupChat();
