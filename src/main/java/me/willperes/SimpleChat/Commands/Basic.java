@@ -17,6 +17,7 @@ public class Basic implements CommandExecutor {
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&l[&6SimpleChat&f&l] " +
                         "&aCommands available: &f(usage: /simplechat <command>)." +
                         "\n&f - &eReload&f: reload the config.yml file."));
+
                 return true;
 
             }
@@ -26,6 +27,7 @@ public class Basic implements CommandExecutor {
                 SimpleChatMain.plugin.reloadConfig();
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&',"&f&l[&6SimpleChat&f&l] " +
                         "&aConfig reloaded."));
+
                 return true;
 
             }
