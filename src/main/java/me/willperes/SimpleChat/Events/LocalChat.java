@@ -4,7 +4,6 @@ import me.willperes.SimpleChat.Main.SimpleChatMain;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
-import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,12 +16,12 @@ public class LocalChat implements Listener {
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent e) {
 
-        sendMessage(e.getMessage(),e.getPlayer().getLocation(),e.getPlayer().getDisplayName(),e.getPlayer());
+        sendMessage(e.getMessage(),e.getPlayer().getLocation(),e.getPlayer());
         e.setCancelled(true);
 
     }
 
-    private void sendMessage(String message, Location loc, String playerName, Player whoSent) {
+    private void sendMessage(String message, Location loc, Player whoSent) {
 
         if(!(whoSent.hasPermission("simplechat.local.use"))) {
             whoSent.sendMessage(ChatColor.RED + "You don't have permission to do this.");
@@ -30,12 +29,10 @@ public class LocalChat implements Listener {
         }
 
         String playerGroupPrefix = null;
-        boolean playerHasGroup = false;
         int i;
 
         if(SimpleChatMain.chat.getPrimaryGroup(whoSent) != null) {
 
-            playerHasGroup = true;
             String[] allGroups = SimpleChatMain.chat.getGroups();
 
             for(i = 0 ; i < allGroups.length ; i++) {
@@ -54,7 +51,6 @@ public class LocalChat implements Listener {
         the message is within the radius, he will receive the message. In case there is no one within the radius, the
         sender will receive a message that no one is close to hear him
          */
-        World world = whoSent.getWorld();
         ArrayList<Player> players = new ArrayList<>(Bukkit.getServer().getOnlinePlayers());
         if(players.size() == 1) {
             whoSent.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[L] "
