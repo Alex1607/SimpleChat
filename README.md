@@ -14,14 +14,16 @@ To use this plugin, you need to install the Vault plugin as well. It is needed, 
 Link to Vault: https://www.spigotmc.org/resources/vault.34315/
 
 ## Commands
-There is only one command so far:
 
-- /g (message)
+- **/g** (**message**) - sends a message in the global chat.
+- **/simplechat** - shows all commands available to manage the plugin.
+- **/simplechat reload** - reload the config.yml file without needing to reload the server.
 
 ## Permissions
 
-- simplechat.local.use - allow the player or group to use the local chat
-- simplechat.global.use - allow the player or group to use the global chat
+- **simplechat.local.use** - allow the player or group to use the local chat.
+- **simplechat.global.use** - allow the player or group to use the global chat.
+- **simplechat.admin** - allow the player or group to use the **/simplechat** command and all commands that it will show (including **/simplechat reload**).
 
 ## Group prefix
 
