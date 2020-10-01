@@ -12,6 +12,11 @@ public class Basic implements CommandExecutor {
 
         if(label.equalsIgnoreCase("simplechat")) {
 
+            if(!(sender.hasPermission("simplechat.admin"))) {
+                sender.sendMessage(ChatColor.RED + "You don't have permission to do this.");
+                return true;
+            }
+
             if(args.length == 0) {
 
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', "&f&l[&6SimpleChat&f&l] " +
