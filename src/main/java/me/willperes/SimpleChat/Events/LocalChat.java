@@ -71,7 +71,7 @@ public class LocalChat implements Listener {
                     return;
                 }
 
-                // There is no one in the player radius.
+            // There is no one in the player radius.
             }else{
 
                 whoSent.sendMessage(ChatColor.translateAlternateColorCodes('&', "&e[L] "
