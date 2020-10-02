@@ -5,24 +5,18 @@ import net.milkbowl.vault.chat.Chat;
 
 import me.willperes.SimpleChat.Commands.GlobalChat;
 import me.willperes.SimpleChat.Events.LocalChat;
-import org.bukkit.configuration.InvalidConfigurationException;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.File;
-import java.io.IOException;
-
 public final class SimpleChatMain extends JavaPlugin implements Listener {
 
-    public static SimpleChatMain plugin;
-    public static Chat chat = null;
+    private static SimpleChatMain plugin;
+    public static Chat chat;
 
+    @Override
     public void onEnable() {
-
-        createFiles();
+        plugin.saveDefaultConfig();
         plugin = this;
 
         this.getCommand("g").setExecutor(new GlobalChat());
@@ -30,33 +24,14 @@ public final class SimpleChatMain extends JavaPlugin implements Listener {
         this.getServer().getPluginManager().registerEvents(new LocalChat(), this);
 
         setupChat();
-
     }
 
     private boolean setupChat() {
         RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
-        chat = rsp.getProvider();
-        return (chat != null);
+        return (rsp.getProvider() != null);
     }
 
-    private File configf;
-    private FileConfiguration config;
-
-    private void createFiles() {
-        configf = new File(getDataFolder(), "config.yml");
-
-        if(!configf.exists()) {
-            configf.getParentFile().mkdirs();
-            saveResource("config.yml",false);
-        }
-        config = new YamlConfiguration();
-
-        try {
-            config.load(configf);
-
-        } catch (IOException | InvalidConfigurationException e) {
-            e.printStackTrace();
-        }
+    public static SimpleChatMain getPlugin() {
+        return plugin;
     }
-
 }
